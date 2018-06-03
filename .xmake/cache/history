@@ -1,0 +1,9 @@
+
+{
+    ["__version"] = "2.1.9"
+,   ["cmdlines"] = 
+    {
+        "xmake l -c \"import(\"core.project.config\"); config.load(); print(\"{\\\"plat\\\":\\\"$(plat)\\\", \\\"arch\\\":\\\"$(arch)\\\", \\\"mode\\\":\\\"$(mode)\\\"}\")\""
+    }
+
+}
