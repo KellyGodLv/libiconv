@@ -2,10 +2,22 @@
 target("libiconv")
 
     -- set kind
-    set_kind("static")
+    set_kind("shared")
+
+    if is_kind("static") then 
+        --add_defines("USING_STATIC_LIBICONV")
+        add_defines("_LIB")
+    end
+
+    
+
+    if is_kind("shared") then 
+        add_defines("BUILDING_LIBICONV","BUILDING_LIBCHARSET","LIBICONV_EXPORTS")
+    end 
     -- add files
     add_files("libiconv/**.c")
     add_includedirs("include")
+    add_headers("include/**.h")
 
 -- FAQ
 --
